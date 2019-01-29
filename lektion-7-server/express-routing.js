@@ -16,6 +16,10 @@ app.get("/contact", (req, res) => {
     res.send(content);
 });
 
+app.use(function(req, res, next) {
+    res.status(404).send('Ups! Kan ikke finde den side du prøver at kalde :(');
+});
+
 app.listen(4242, () => {
     console.log("Express app kører...");
 });

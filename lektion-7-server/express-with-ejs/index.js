@@ -7,6 +7,7 @@ app.set('view engine', 'ejs');
 
 //Korrigerer view mappe
 app.set('views','lektion-7-server/express-with-ejs/views');
+app.use(express.static(__dirname + '/'));
 
 //Forside
 app.get("/", (req, res) => {

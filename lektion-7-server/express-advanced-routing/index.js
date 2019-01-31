@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 
 app.get("/sange", (req, res) => {
     console.log(req.params);
-    res.send("Liste over sange");
+    res.send("Liste over  sange");
 });
 
 app.get("/sange/:id", (req, res) => {

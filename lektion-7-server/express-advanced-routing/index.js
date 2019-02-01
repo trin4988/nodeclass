@@ -1,25 +1,16 @@
 const express = require('express');
 const app = express();
+const logger = require('morgan');
+app.use(logger('dev'));
 
-//Sætter view engine til ejs
-app.set('view engine', 'ejs');
+/* Route begin */
 
-//Korrigerer view mappe
-//app.set('views','lektion-7-server/express-advanced-routing/views');
+app.get('/api/test', (req, res) => {
+    res.json({ text: "Hello World" });
+ });
 
-app.get("/sange", (req, res) => {
-    console.log(req.params);
-    res.send("Liste over  sange");
-});
+/* Route end */
 
-app.get("/sange/:id", (req, res) => {
-    console.log(req.params);
-    res.json({
-        params: req.params
-    });
-});
-
-//Angiver port der skal lyttes på
 app.listen(4242, () => {
     console.log("Express server kører...");
 });
